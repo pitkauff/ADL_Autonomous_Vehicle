@@ -210,4 +210,61 @@ def detection(image, weights, cfg, classes_file):
     return image, boxes
 
 
+def un_zip(file_path):
+    path, fname = os.path.split(file_path)
+
+    if (fname.endswith("tgz")):
+        tar = tarfile.open(fname, "r:gz")
+        tar.extractall(path)
+        tar.close()
+    elif (fname.endswith("tar")):
+        tar = tarfile.open(fname, "r:")
+        tar.extractall(path)
+        tar.close()
+    elif (fname.endswith("zip")):
+        zip_ref = zipfile.ZipFile(fname, 'r')
+        zip_ref.extractall(path)
+        zip_ref.close()
+
+    if fname.split("_")[2] == "Training":
+        new_path = path + "/" + fname.split("_")[0] + "/Final_Training/Images"
+    elif fname.split("_")[2] == "Test":
+        new_path = path + "/" + fname.split("_")[0] + "/Final_Test"
+
+    return new_path
+
+
+def readTrafficSigns(rootpath, train):
+    images = []
+    labels = []
+    size = 150, 150
+
+    if train:
+        for c in tqdm_notebook(range(0, 43)):
+            prefix = rootpath + '/' + str(format(c, '05d')) + '/'
+            gtFile = open(prefix + 'GT-' + str(format(c, '05d')) + '.csv')
+            gtReader = csv.reader(gtFile, delimiter=';')
+            next(gtReader, None)
+            for row in gtReader:
+                image = Image.open(prefix + row[0])
+                image = image.resize(size, Image.ANTIALIAS)
+                images.append(array(image))
+                labels.append(row[7])
+            gtFile.close()
+
+    else:
+        prefix = rootpath + '/Images/'
+        gtFile = open("/home/pk2573/GT-final_test.csv")
+        gtReader = csv.reader(gtFile, delimiter=';')
+        next(gtReader, None)
+        for row in gtReader:
+            image = Image.open(prefix + row[0])
+            image = image.resize(size, Image.ANTIALIAS)
+            images.append(array(image))
+            labels.append(row[7])
+        gtFile.close()
+
+    return np.array(images, dtype=int), np.array(labels, dtype=int)
+
+
 
