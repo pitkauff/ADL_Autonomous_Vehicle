@@ -7,10 +7,10 @@
     ├── Archive
     |    |-- This File contains a lot of models that we tried but that did not work. It also contains dated notebooks.
     |
-    ├── data_collection_remote_control.ipynb
+    ├── data_collection_remote_control_final.ipynb
     │    |-- This notebook lays out functionality to control the GoPiGo using python(on raspian for robots).
     |
-    ├── data_collection_capture.ipynb
+    ├── data_collection_capture_final.ipynb
     |    |--This notebook captures images while the car is driving, run after running data_collection_remote_control.ipynb.
     |
     ├──  model_training_final.ipynb
