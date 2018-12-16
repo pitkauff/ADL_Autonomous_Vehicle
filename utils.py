@@ -4,8 +4,13 @@ from PIL import Image
 import numpy as np
 import cv2
 import re
+import zipfile
+import csv
+import tarfile
 from matplotlib import pyplot as plt
 from tensorflow.keras import backend as K
+from tqdm import tqdm_notebook
+from numpy import array
 
 def sorted_nicely(l):
     """ Sorts the given iterable in the way that is expected.
