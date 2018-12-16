@@ -5,6 +5,11 @@ Stay Hungry. Stay Foolish.
 
 """
 
+import os
+from PIL import Image
+import numpy as np
+import cv2
+import re
 
 def sorted_nicely(l):
     """ Sorts the given iterable in the way that is expected.
