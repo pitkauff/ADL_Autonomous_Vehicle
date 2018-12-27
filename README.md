@@ -1,6 +1,9 @@
 # Applied Deep Learning project : Autonomous_Vehicle
 
-The project combines hardware and software elements and thus, we cannot make this run end-to-end by running a bash script. We try and walk you through our project and what the notebooks do individually. This can then be implemented by any user if they have the required hardware. The goal we want to acheive is lane detection, i.e., put the robot on a track and have it follow the track by making on-line predictions using a pre trained model. 
+In this project we construct and train an autonomous car to navigate a track using a single camera and the GoPiGo3 by Dexter Industries. In this repository, we provide the code and instructions on how to collect training data, train a deep learning (CNN) model, and deploy it to a Raspberry Pi controlled car. The inception of this project was in a class, COMS4995_006 Applied Deep Learning at Columbia University SEAS in the Fall of 2018. 
+
+## Submission Notes
+The project combines hardware and software elements and thus, we cannot make this run end-to-end by running a bash script. We walk the reader through our project and what the notebooks do individually. This can then be implemented by any user if they have the required hardware. The goal is lane keeping, i.e., put the robot on a track and have it follow the track by making on-line predictions using a pre trained model. 
 
 <p align="center">
   <img src= "images/lanes.png" height="300" width="420">
