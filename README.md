@@ -1,4 +1,4 @@
-# Applied Deep Learning project : Autonomous_Vehicle
+# Applied Deep Learning Project : Autonomous_Vehicle
 
 In this project we construct and train an autonomous car to navigate a track using a single camera and the GoPiGo3 by Dexter Industries. In this repository, we provide the code and instructions on how to collect training data, train a deep learning (CNN) model, and deploy it to a Raspberry Pi controlled car. The inception of this project was in a class, COMS4995_006 Applied Deep Learning at Columbia University SEAS in the Fall of 2018. 
 
